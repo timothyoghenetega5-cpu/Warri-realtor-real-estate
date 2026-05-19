@@ -1,0 +1,2057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warri Realtor | Premium Property Investment in Delta State</title>
+<meta name="description" content="Own premium land, luxury homes, and investment properties in Warri, Delta State. Warri Realtor — trusted by high-net-worth Nigerians and diaspora investors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E4C97E;
+    --gold-pale: #F5E6C0;
+    --obsidian: #080A0C;
+    --charcoal: #0F1215;
+    --dark: #141820;
+    --dark-mid: #1C2128;
+    --dark-card: #1A1F26;
+    --slate: #2A3140;
+    --muted: #8A94A6;
+    --silver: #C4CDD8;
+    --white: #FFFFFF;
+    --off-white: #F8F6F1;
+    --cream: #F2EDE4;
+    --text-dim: rgba(255,255,255,0.55);
+    --text-mid: rgba(255,255,255,0.75);
+    --border-dark: rgba(201,168,76,0.15);
+    --border-subtle: rgba(255,255,255,0.06);
+    --glass: rgba(255,255,255,0.04);
+    --glass-gold: rgba(201,168,76,0.08);
+    --shadow-gold: 0 0 60px rgba(201,168,76,0.12);
+    --shadow-deep: 0 40px 80px rgba(0,0,0,0.5);
+    --radius: 2px;
+    --radius-card: 4px;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--obsidian);
+    color: var(--white);
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* ─── CUSTOM CURSOR ─── */
+  #cursor-dot {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none; z-index: 9999;
+    transform: translate(-50%,-50%);
+    transition: transform 0.1s ease;
+  }
+  #cursor-ring {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(201,168,76,0.5);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none; z-index: 9998;
+    transform: translate(-50%,-50%);
+    transition: all 0.25s cubic-bezier(0.23,1,0.32,1);
+  }
+  body:hover #cursor-ring { opacity: 1; }
+
+  /* ─── LOADER ─── */
+  #loader {
+    position: fixed; inset: 0;
+    background: var(--obsidian);
+    z-index: 9000;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 32px;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+  }
+  #loader.hidden { opacity: 0; visibility: hidden; }
+  .loader-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    animation: loaderPulse 1.5s ease infinite;
+  }
+  .loader-bar-track {
+    width: 200px; height: 1px;
+    background: var(--border-subtle);
+    overflow: hidden;
+  }
+  .loader-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    width: 0%;
+    transition: width 2s cubic-bezier(0.4,0,0.2,1);
+  }
+  @keyframes loaderPulse {
+    0%,100%{opacity:0.6} 50%{opacity:1}
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 500;
+    padding: 0 60px;
+    height: 80px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: all 0.5s cubic-bezier(0.23,1,0.32,1);
+  }
+  nav.scrolled {
+    background: rgba(8,10,12,0.92);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid var(--border-dark);
+    height: 68px;
+  }
+  .nav-logo {
+    display: flex; flex-direction: column; gap: 0px;
+    text-decoration: none;
+  }
+  .nav-logo-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    line-height: 1;
+  }
+  .nav-logo-sub {
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex; align-items: center; gap: 40px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+  }
+  .nav-links a::after {
+    content:''; position:absolute; bottom:-4px; left:0;
+    width:0; height:1px; background:var(--gold);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold) !important;
+    padding: 10px 24px;
+    font-size: 0.7rem !important;
+    letter-spacing: 0.2em !important;
+    text-decoration: none;
+    transition: all 0.3s !important;
+  }
+  .nav-cta:hover {
+    background: var(--gold) !important;
+    color: var(--obsidian) !important;
+  }
+  .nav-cta::after { display: none !important; }
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px;
+  }
+  .hamburger span {
+    width: 24px; height: 1px; background: var(--gold);
+    display: block; transition: all 0.3s;
+  }
+  .mobile-menu {
+    display: none; position: fixed; inset: 0;
+    background: var(--obsidian); z-index: 400;
+    flex-direction: column; align-items: center; justify-content: center;
+    gap: 40px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; color: var(--white);
+    text-decoration: none; letter-spacing: 0.05em;
+    transition: color 0.3s;
+  }
+  .mobile-menu a:hover { color: var(--gold); }
+  .close-menu {
+    position: absolute; top: 30px; right: 30px;
+    background: none; border: none; color: var(--gold);
+    font-size: 2rem; cursor: pointer;
+  }
+
+  /* ─── HERO ─── */
+  #hero {
+    position: relative; height: 100vh; min-height: 700px;
+    display: flex; align-items: flex-end;
+    overflow: hidden;
+  }
+  .hero-video-wrap {
+    position: absolute; inset: 0; z-index: 0;
+  }
+  .hero-video-wrap video {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: brightness(0.35) saturate(0.8);
+    animation: kenBurns 20s ease-in-out infinite alternate;
+  }
+  @keyframes kenBurns {
+    0%{transform:scale(1) translate(0,0)}
+    100%{transform:scale(1.08) translate(-1%,-1%)}
+  }
+  .hero-video-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(8,10,12,0.7) 0%, rgba(8,10,12,0.2) 50%, rgba(8,10,12,0.8) 100%);
+    z-index: 1;
+  }
+  .hero-grain {
+    position: absolute; inset: 0; z-index: 2; opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+  .hero-content {
+    position: relative; z-index: 10;
+    width: 100%; padding: 0 80px 100px;
+    display: grid; grid-template-columns: 1fr 320px;
+    align-items: flex-end; gap: 80px;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1px solid var(--border-dark);
+    padding: 8px 18px;
+    margin-bottom: 28px;
+    opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
+  }
+  .hero-badge-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold); animation: pulse 2s ease infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.5)} }
+  .hero-badge span {
+    font-size: 0.65rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--gold);
+  }
+  .hero-h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5.5vw, 6rem);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    margin-bottom: 24px;
+    opacity: 0; animation: fadeUp 0.9s 0.6s forwards;
+  }
+  .hero-h1 em { font-style: italic; color: var(--gold); }
+  .hero-sub {
+    font-size: 1rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+    max-width: 520px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    opacity: 0; animation: fadeUp 0.9s 0.8s forwards;
+  }
+  .hero-btns {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp 0.9s 1s forwards;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--obsidian);
+    padding: 16px 36px;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    border: none; cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.23,1,0.32,1);
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px rgba(201,168,76,0.3);
+  }
+  .btn-outline {
+    border: 1px solid rgba(255,255,255,0.25);
+    color: var(--white);
+    padding: 16px 36px;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-decoration: none;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.35s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  .hero-trust {
+    display: flex; flex-direction: column; gap: 16px;
+    opacity: 0; animation: fadeUp 0.9s 1.1s forwards;
+  }
+  .trust-card {
+    background: var(--glass);
+    border: 1px solid var(--border-subtle);
+    backdrop-filter: blur(20px);
+    padding: 20px 24px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .trust-icon {
+    width: 40px; height: 40px;
+    border: 1px solid var(--border-dark);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; color: var(--gold); font-size: 1rem;
+  }
+  .trust-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+  .trust-value { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--white); }
+  .hero-scroll {
+    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+    z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 8px;
+    animation: fadeUp 1s 1.5s forwards; opacity: 0;
+  }
+  .hero-scroll span { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); }
+  .scroll-line {
+    width: 1px; height: 60px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollAnim 2s ease infinite;
+  }
+  @keyframes scrollAnim { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform:scaleY(1);transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
+  .hero-stats {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    z-index: 10;
+    display: flex;
+    border-top: 1px solid var(--border-subtle);
+  }
+  .hero-stat {
+    flex: 1;
+    padding: 24px 40px;
+    border-right: 1px solid var(--border-subtle);
+    background: rgba(8,10,12,0.6);
+    backdrop-filter: blur(20px);
+  }
+  .hero-stat:last-child { border-right: none; }
+  .hero-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 400;
+    color: var(--gold); line-height: 1;
+  }
+  .hero-stat-label {
+    font-size: 0.62rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--muted);
+    margin-top: 4px;
+  }
+
+  @keyframes fadeUp {
+    from{opacity:0;transform:translateY(30px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+
+  /* ─── SECTION GLOBALS ─── */
+  section { position: relative; }
+  .section-tag {
+    display: inline-flex; align-items: center; gap: 12px;
+    margin-bottom: 20px;
+  }
+  .section-tag::before {
+    content:''; display:block; width:40px; height:1px; background:var(--gold);
+  }
+  .section-tag span {
+    font-size: 0.65rem; letter-spacing: 0.28em;
+    text-transform: uppercase; color: var(--gold);
+  }
+  .section-h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    font-weight: 300; line-height: 1.15;
+    color: var(--white);
+  }
+  .section-h2 em { font-style: italic; color: var(--gold); }
+  .section-p {
+    font-size: 0.95rem; color: var(--text-dim);
+    line-height: 1.9; font-weight: 300;
+    max-width: 520px;
+  }
+  .gold-line {
+    width: 60px; height: 1px; background: linear-gradient(to right, var(--gold), transparent);
+    margin: 24px 0;
+  }
+
+  /* ─── MARQUEE TICKER ─── */
+  .ticker-wrap {
+    background: var(--gold);
+    overflow: hidden; padding: 14px 0;
+  }
+  .ticker-track {
+    display: flex; gap: 0;
+    animation: ticker 30s linear infinite;
+    white-space: nowrap;
+  }
+  .ticker-item {
+    display: inline-flex; align-items: center; gap: 40px;
+    padding: 0 40px;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--obsidian);
+    font-weight: 600;
+  }
+  .ticker-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--obsidian); opacity: 0.4; }
+  @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+  /* ─── ABOUT INTRO ─── */
+  #about-intro {
+    background: var(--obsidian);
+    padding: 120px 80px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 100px; align-items: center;
+  }
+  .about-visual {
+    position: relative;
+  }
+  .about-img-main {
+    width: 100%; aspect-ratio: 4/5;
+    background: var(--dark-mid);
+    overflow: hidden; position: relative;
+  }
+  .about-img-main img { width:100%; height:100%; object-fit:cover; transition: transform 8s ease; }
+  .about-img-main:hover img { transform: scale(1.05); }
+  .about-img-accent {
+    position: absolute; bottom: -40px; right: -40px;
+    width: 55%; aspect-ratio: 1;
+    background: var(--dark-card);
+    border: 4px solid var(--obsidian);
+    overflow: hidden;
+  }
+  .about-img-accent img { width:100%; height:100%; object-fit:cover; }
+  .about-exp-badge {
+    position: absolute; top: 40px; left: -40px;
+    background: var(--gold);
+    padding: 24px 28px;
+    text-align: center;
+  }
+  .about-exp-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; color: var(--obsidian); line-height: 1;
+  }
+  .about-exp-label { font-size: 0.6rem; letter-spacing: 0.2em; color: var(--obsidian); opacity: 0.7; text-transform: uppercase; }
+
+  /* ─── PROPERTIES ─── */
+  #properties {
+    background: var(--charcoal);
+    padding: 120px 80px;
+  }
+  .properties-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 60px;
+  }
+  .filter-tabs {
+    display: flex; gap: 0;
+    border: 1px solid var(--border-dark);
+  }
+  .filter-tab {
+    padding: 12px 24px;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-right: 1px solid var(--border-dark);
+    transition: all 0.3s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .filter-tab:last-child { border-right: none; }
+  .filter-tab.active, .filter-tab:hover {
+    background: var(--gold);
+    color: var(--obsidian);
+  }
+  .properties-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .prop-card {
+    position: relative; overflow: hidden;
+    aspect-ratio: 3/4;
+    background: var(--dark-card);
+    cursor: pointer;
+  }
+  .prop-card.featured {
+    grid-row: span 2;
+    aspect-ratio: auto;
+  }
+  .prop-card img {
+    width:100%; height:100%; object-fit:cover;
+    transition: transform 0.8s cubic-bezier(0.23,1,0.32,1), filter 0.5s;
+    filter: brightness(0.65) saturate(0.9);
+  }
+  .prop-card:hover img {
+    transform: scale(1.08);
+    filter: brightness(0.5) saturate(0.8);
+  }
+  .prop-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(8,10,12,0.92) 0%, transparent 50%);
+    z-index: 2;
+  }
+  .prop-info {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    z-index: 3; padding: 28px;
+    transform: translateY(0); transition: all 0.4s;
+  }
+  .prop-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--obsidian);
+    padding: 4px 12px;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .prop-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  .prop-loc {
+    font-size: 0.7rem; color: var(--muted);
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .prop-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; color: var(--gold);
+  }
+  .prop-cta {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold);
+    margin-top: 16px;
+    opacity: 0; transform: translateY(10px);
+    transition: all 0.4s 0.1s;
+  }
+  .prop-cta svg { transition: transform 0.3s; }
+  .prop-card:hover .prop-cta { opacity: 1; transform: translateY(0); }
+  .prop-card:hover .prop-cta svg { transform: translateX(4px); }
+
+  /* ─── WHY INVEST ─── */
+  #why-invest {
+    padding: 140px 80px;
+    background: var(--obsidian);
+    position: relative; overflow: hidden;
+  }
+  .why-bg-text {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20vw; font-weight: 700;
+    color: rgba(255,255,255,0.02);
+    pointer-events: none; white-space: nowrap;
+    letter-spacing: -0.05em;
+  }
+  .why-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 100px; align-items: center;
+    position: relative; z-index: 2;
+  }
+  .why-stats {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2px; margin-top: 60px;
+  }
+  .why-stat-card {
+    background: var(--dark-mid);
+    border: 1px solid var(--border-subtle);
+    padding: 32px 28px;
+    position: relative; overflow: hidden;
+  }
+  .why-stat-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(to right, var(--gold), transparent);
+  }
+  .why-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem; color: var(--gold); line-height: 1;
+  }
+  .why-stat-desc { font-size: 0.75rem; color: var(--muted); margin-top: 8px; line-height: 1.6; }
+  .invest-points { display: flex; flex-direction: column; gap: 24px; margin-top: 40px; }
+  .invest-point {
+    display: flex; gap: 20px; align-items: flex-start;
+    padding: 24px;
+    background: var(--dark-card);
+    border: 1px solid var(--border-subtle);
+    transition: border-color 0.3s;
+  }
+  .invest-point:hover { border-color: var(--border-dark); }
+  .invest-point-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    border: 1px solid var(--border-dark);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 1.1rem;
+  }
+  .invest-point-title { font-size: 0.9rem; font-weight: 500; margin-bottom: 6px; }
+  .invest-point-desc { font-size: 0.8rem; color: var(--text-dim); line-height: 1.7; }
+
+  /* ─── SERVICES ─── */
+  #services {
+    background: var(--dark);
+    padding: 120px 80px;
+  }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 2px; margin-top: 60px;
+  }
+  .service-card {
+    background: var(--dark-card);
+    padding: 40px 32px;
+    border: 1px solid var(--border-subtle);
+    position: relative; overflow: hidden;
+    transition: all 0.4s;
+    cursor: pointer;
+  }
+  .service-card::before {
+    content:''; position:absolute;
+    bottom:0; left:0; right:0; height:0;
+    background: var(--glass-gold);
+    transition: height 0.4s cubic-bezier(0.23,1,0.32,1);
+  }
+  .service-card:hover::before { height: 100%; }
+  .service-card:hover { border-color: var(--border-dark); }
+  .service-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; color: rgba(201,168,76,0.1);
+    line-height: 1; margin-bottom: 20px;
+  }
+  .service-icon {
+    width: 48px; height: 48px;
+    border: 1px solid var(--border-dark);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 1.2rem;
+    margin-bottom: 20px; transition: background 0.3s;
+  }
+  .service-card:hover .service-icon { background: var(--gold); color: var(--obsidian); }
+  .service-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; margin-bottom: 12px; color: var(--white);
+  }
+  .service-desc { font-size: 0.78rem; color: var(--text-dim); line-height: 1.8; }
+  .service-arrow {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold);
+    margin-top: 24px; opacity: 0; transition: opacity 0.3s;
+  }
+  .service-card:hover .service-arrow { opacity: 1; }
+
+  /* ─── CALCULATOR ─── */
+  #calculator {
+    background: var(--charcoal);
+    padding: 120px 80px;
+  }
+  .calc-wrap {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: flex-start; margin-top: 60px;
+  }
+  .calc-box {
+    background: var(--dark-card);
+    border: 1px solid var(--border-dark);
+    padding: 48px;
+  }
+  .calc-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; margin-bottom: 32px; color: var(--white);
+  }
+  .calc-field { margin-bottom: 24px; }
+  .calc-field label {
+    display: block; font-size: 0.65rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 10px;
+  }
+  .calc-field input, .calc-field select {
+    width: 100%; background: var(--dark-mid);
+    border: 1px solid var(--border-subtle);
+    color: var(--white); padding: 14px 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem; outline: none;
+    transition: border-color 0.3s;
+    appearance: none;
+  }
+  .calc-field input:focus, .calc-field select:focus { border-color: var(--gold); }
+  .calc-field select option { background: var(--dark-mid); }
+  .calc-slider { width: 100%; accent-color: var(--gold); }
+  .calc-result {
+    background: var(--dark-mid);
+    border: 1px solid var(--border-dark);
+    padding: 48px;
+  }
+  .calc-result-title {
+    font-size: 0.65rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 32px;
+  }
+  .calc-result-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .calc-result-row:last-of-type { border-bottom: none; }
+  .calc-result-label { font-size: 0.8rem; color: var(--text-dim); }
+  .calc-result-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; color: var(--gold);
+  }
+  .calc-result-total {
+    margin-top: 24px; padding: 24px;
+    background: var(--glass-gold);
+    border: 1px solid var(--border-dark);
+    text-align: center;
+  }
+  .calc-total-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+  .calc-total-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; color: var(--white); margin-top: 8px;
+  }
+
+  /* ─── TESTIMONIALS ─── */
+  #testimonials {
+    background: var(--obsidian);
+    padding: 120px 80px;
+    overflow: hidden;
+  }
+  .testi-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 60px;
+  }
+  .rating-badge {
+    display: flex; align-items: center; gap: 16px;
+    background: var(--dark-card);
+    border: 1px solid var(--border-dark);
+    padding: 16px 24px;
+  }
+  .rating-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; color: var(--gold);
+  }
+  .rating-stars { display: flex; gap: 4px; }
+  .star { color: var(--gold); font-size: 0.9rem; }
+  .rating-count { font-size: 0.7rem; color: var(--muted); }
+  .testi-track {
+    display: flex; gap: 24px;
+    transition: transform 0.6s cubic-bezier(0.23,1,0.32,1);
+  }
+  .testi-card {
+    min-width: 400px; flex-shrink: 0;
+    background: var(--dark-card);
+    border: 1px solid var(--border-subtle);
+    padding: 40px;
+    position: relative;
+  }
+  .testi-quote {
+    font-size: 3rem; color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1; margin-bottom: 16px;
+  }
+  .testi-text {
+    font-size: 0.88rem; color: var(--text-mid);
+    line-height: 1.9; margin-bottom: 28px;
+    font-style: italic;
+  }
+  .testi-author { display: flex; align-items: center; gap: 16px; }
+  .testi-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--slate); overflow: hidden;
+    border: 2px solid var(--border-dark);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; color: var(--gold);
+  }
+  .testi-name { font-size: 0.85rem; font-weight: 500; }
+  .testi-role { font-size: 0.7rem; color: var(--muted); margin-top: 2px; }
+  .testi-controls {
+    display: flex; gap: 12px; margin-top: 48px;
+  }
+  .testi-btn {
+    width: 48px; height: 48px;
+    border: 1px solid var(--border-dark);
+    background: transparent; color: var(--gold);
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s;
+  }
+  .testi-btn:hover { background: var(--gold); color: var(--obsidian); }
+
+  /* ─── SOCIAL / INSTAGRAM ─── */
+  #social {
+    background: var(--dark);
+    padding: 120px 80px;
+  }
+  .social-header {
+    text-align: center; margin-bottom: 60px;
+  }
+  .insta-handle {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 0.75rem; letter-spacing: 0.15em;
+    color: var(--gold); margin-bottom: 16px;
+  }
+  .insta-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+  }
+  .insta-card {
+    aspect-ratio: 1;
+    background: var(--dark-card);
+    overflow: hidden; position: relative; cursor: pointer;
+  }
+  .insta-card img { width:100%; height:100%; object-fit:cover; transition: transform 0.5s, filter 0.5s; filter: brightness(0.8) saturate(0.9); }
+  .insta-card:hover img { transform: scale(1.1); filter: brightness(0.6); }
+  .insta-overlay {
+    position: absolute; inset: 0;
+    background: rgba(8,10,12,0.6);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 8px; opacity: 0; transition: opacity 0.4s;
+  }
+  .insta-card:hover .insta-overlay { opacity: 1; }
+  .insta-likes { color: var(--gold); font-size: 0.7rem; letter-spacing: 0.1em; }
+  .social-metrics {
+    display: flex; gap: 0; margin-top: 40px;
+    border: 1px solid var(--border-dark);
+  }
+  .metric-box {
+    flex: 1; padding: 28px 32px;
+    border-right: 1px solid var(--border-dark);
+    text-align: center;
+  }
+  .metric-box:last-child { border-right: none; }
+  .metric-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; color: var(--gold);
+  }
+  .metric-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+
+  /* ─── CTA BANNER ─── */
+  #cta-banner {
+    position: relative; overflow: hidden;
+    padding: 160px 80px;
+    background: var(--dark-mid);
+    text-align: center;
+  }
+  .cta-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.05) 0%, transparent 60%);
+  }
+  .cta-grid-lines {
+    position: absolute; inset: 0; opacity: 0.03;
+    background-image: linear-gradient(to right, var(--gold) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--gold) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .cta-h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 4.5rem);
+    font-weight: 300; line-height: 1.1;
+    max-width: 800px; margin: 0 auto 24px;
+  }
+  .cta-sub { font-size: 0.95rem; color: var(--text-dim); margin-bottom: 48px; }
+  .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .cta-wa-btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: #25D366; color: white;
+    padding: 18px 40px;
+    font-size: 0.75rem; letter-spacing: 0.15em;
+    text-transform: uppercase; font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .cta-wa-btn:hover { background: #128C7E; transform: translateY(-2px); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--obsidian);
+    border-top: 1px solid var(--border-subtle);
+    padding: 80px 80px 40px;
+  }
+  .footer-top {
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 60px; margin-bottom: 60px;
+  }
+  .footer-brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; color: var(--gold);
+    letter-spacing: 0.1em; margin-bottom: 8px;
+  }
+  .footer-brand-tagline {
+    font-size: 0.65rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .footer-desc { font-size: 0.82rem; color: var(--text-dim); line-height: 1.9; margin-bottom: 28px; }
+  .footer-contact-item {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 0.8rem; color: var(--text-dim);
+    margin-bottom: 12px;
+  }
+  .footer-contact-icon { color: var(--gold); font-size: 0.9rem; }
+  .footer-col-title {
+    font-size: 0.65rem; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 24px; padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-dark);
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a {
+    font-size: 0.8rem; color: var(--text-dim);
+    text-decoration: none; transition: color 0.3s;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .footer-links a::before { content:'›'; color: var(--gold); }
+  .footer-links a:hover { color: var(--gold); }
+  .newsletter-form { display: flex; gap: 0; }
+  .newsletter-input {
+    flex: 1; background: var(--dark-mid);
+    border: 1px solid var(--border-subtle); border-right: none;
+    color: var(--white); padding: 14px 16px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.8rem;
+    outline: none;
+  }
+  .newsletter-btn {
+    background: var(--gold); border: none;
+    color: var(--obsidian); padding: 0 20px;
+    cursor: pointer; font-size: 0.9rem;
+    transition: background 0.3s;
+  }
+  .newsletter-btn:hover { background: var(--gold-light); }
+  .footer-bottom {
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .footer-copy { font-size: 0.72rem; color: var(--muted); }
+  .footer-socials { display: flex; gap: 16px; }
+  .footer-social {
+    width: 36px; height: 36px;
+    border: 1px solid var(--border-subtle);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted); text-decoration: none;
+    font-size: 0.8rem; transition: all 0.3s;
+  }
+  .footer-social:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ─── FLOATING WhatsApp ─── */
+  .wa-fab {
+    position: fixed; bottom: 36px; right: 36px;
+    z-index: 300;
+    width: 60px; height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 32px rgba(37,211,102,0.35);
+    text-decoration: none;
+    animation: waPulse 3s ease infinite;
+    transition: transform 0.3s;
+  }
+  .wa-fab:hover { transform: scale(1.1); }
+  @keyframes waPulse {
+    0%,100%{box-shadow:0 8px 32px rgba(37,211,102,0.35)}
+    50%{box-shadow:0 8px 50px rgba(37,211,102,0.6)}
+  }
+  .wa-fab svg { width: 28px; height: 28px; fill: white; }
+  .wa-tooltip {
+    position: fixed; bottom: 46px; right: 108px;
+    background: var(--dark-card); border: 1px solid var(--border-dark);
+    padding: 10px 16px; font-size: 0.75rem; color: var(--white);
+    white-space: nowrap; pointer-events: none;
+    opacity: 0; transition: opacity 0.3s;
+    backdrop-filter: blur(12px);
+  }
+  .wa-fab:hover ~ .wa-tooltip { opacity: 1; }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0; transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.23,1,0.32,1), transform 0.8s cubic-bezier(0.23,1,0.32,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-l {
+    opacity: 0; transform: translateX(-40px);
+    transition: opacity 0.8s cubic-bezier(0.23,1,0.32,1), transform 0.8s cubic-bezier(0.23,1,0.32,1);
+  }
+  .reveal-l.visible { opacity: 1; transform: translateX(0); }
+  .reveal-r {
+    opacity: 0; transform: translateX(40px);
+    transition: opacity 0.8s cubic-bezier(0.23,1,0.32,1), transform 0.8s cubic-bezier(0.23,1,0.32,1);
+  }
+  .reveal-r.visible { opacity: 1; transform: translateX(0); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1100px) {
+    .hero-content { grid-template-columns: 1fr; padding: 0 40px 80px; }
+    .hero-trust { flex-direction: row; flex-wrap: wrap; }
+    .trust-card { flex: 1; min-width: 200px; }
+    #about-intro { grid-template-columns: 1fr; padding: 80px 40px; gap: 60px; }
+    .about-img-accent { display: none; }
+    .about-exp-badge { left: 20px; top: 20px; }
+    .properties-grid { grid-template-columns: repeat(2, 1fr); }
+    .prop-card.featured { grid-row: span 1; aspect-ratio: 3/4; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: 1fr; gap: 60px; }
+    .calc-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    #properties, #why-invest, #services, #calculator, #testimonials, #social, #cta-banner { padding: 80px 40px; }
+    footer { padding: 60px 40px 32px; }
+    .insta-grid { grid-template-columns: repeat(3, 1fr); }
+    .hero-stats { display: grid; grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .hero-content { padding: 0 24px 80px; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .hero-stat { padding: 16px 20px; }
+    #about-intro { padding: 60px 24px; }
+    #properties, #why-invest, #services, #calculator, #testimonials, #social, #cta-banner { padding: 60px 24px; }
+    .properties-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+    .properties-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .why-stats { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    footer { padding: 48px 24px 24px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .testi-card { min-width: 300px; }
+    .insta-grid { grid-template-columns: repeat(2, 1fr); }
+    .social-metrics { flex-direction: column; }
+    .metric-box { border-right: none; border-bottom: 1px solid var(--border-dark); }
+    .metric-box:last-child { border-bottom: none; }
+    #cta-banner { padding: 80px 24px; }
+    .cta-btns { flex-direction: column; align-items: center; }
+    body { cursor: auto; }
+    #cursor-dot, #cursor-ring { display: none; }
+    .hero-h1 { font-size: 2.4rem; }
+  }
+
+  /* ─── LIGHT SECTION ─── */
+  .section-light {
+    background: var(--off-white) !important;
+    color: var(--obsidian) !important;
+  }
+  .section-light .section-h2 { color: var(--obsidian) !important; }
+  .section-light .section-p { color: rgba(0,0,0,0.6) !important; }
+  .section-light .section-tag span { color: var(--gold) !important; }
+
+  /* ─── LUXURY DIVIDER ─── */
+  .luxury-divider {
+    display: flex; align-items: center; gap: 24px;
+    margin: 40px 0;
+  }
+  .luxury-divider::before, .luxury-divider::after {
+    content:''; flex:1; height:1px;
+    background: linear-gradient(to right, transparent, var(--border-dark), transparent);
+  }
+  .luxury-divider-icon { color: var(--gold); font-size: 1rem; }
+
+  /* verified badges */
+  .verified-strip {
+    display: flex; gap: 0;
+    border: 1px solid var(--border-dark);
+    margin-top: 60px;
+  }
+  .verified-item {
+    flex: 1; padding: 24px 28px;
+    border-right: 1px solid var(--border-dark);
+    display: flex; align-items: center; gap: 16px;
+  }
+  .verified-item:last-child { border-right: none; }
+  .verified-icon { color: var(--gold); font-size: 1.4rem; flex-shrink:0; }
+  .verified-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+  .verified-value { font-size: 0.9rem; color: var(--white); margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">WARRI REALTOR</div>
+  <div class="loader-bar-track"><div class="loader-bar-fill" id="loaderBar"></div></div>
+  <div style="font-size:0.6rem;letter-spacing:0.3em;color:var(--muted);text-transform:uppercase;">Premium Properties · Delta State</div>
+</div>
+
+<!-- FLOATING WhatsApp -->
+<a class="wa-fab" href="https://wa.me/2348160044629?text=Hello%20Warri%20Realtor%2C%20I%27m%20interested%20in%20your%20properties." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.555 4.125 1.525 5.863L0 24l6.337-1.501C8.012 23.471 9.967 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.95 0-3.764-.57-5.285-1.554l-.378-.225-3.767.892.938-3.653-.248-.388C2.24 15.271 1.818 13.68 1.818 12 1.818 6.51 6.51 1.818 12 1.818S22.182 6.51 22.182 12 17.49 21.818 12 21.818z"/></svg>
+</a>
+<div class="wa-tooltip">💬 Chat with us on WhatsApp</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-main">WARRI REALTOR</span>
+    <span class="nav-logo-sub">Delta State · Est. Premium Properties</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#why-invest">Why Warri</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#calculator">ROI Calculator</a></li>
+    <li><a href="https://wa.me/2348160044629?text=Hello%20Warri%20Realtor%2C%20I%27m%20interested%20in%20your%20properties." class="nav-cta" target="_blank">Enquire Now</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" id="closeMenu">✕</button>
+  <a href="#properties" onclick="closeMob()">Properties</a>
+  <a href="#why-invest" onclick="closeMob()">Why Warri</a>
+  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#testimonials" onclick="closeMob()">Reviews</a>
+  <a href="#calculator" onclick="closeMob()">ROI Calculator</a>
+  <a href="https://wa.me/2348160044629" target="_blank" style="color:var(--gold)">📲 WhatsApp Us</a>
+</div>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section id="hero">
+  <div class="hero-video-wrap">
+    <!-- Cinematic video fallback with gradient -->
+    <video autoplay muted loop playsinline poster="">
+      <source src="" type="video/mp4">
+    </video>
+    <!-- Hero background image when video not available -->
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,#050708 0%,#0d1118 40%,#111820 100%);z-index:0;"></div>
+    <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1920&q=80');background-size:cover;background-position:center;filter:brightness(0.25) saturate(0.7);z-index:1;animation:kenBurns 20s ease-in-out infinite alternate;"></div>
+  </div>
+  <div class="hero-video-overlay"></div>
+  <div class="hero-grain"></div>
+
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        <span>Warri's #1 Premium Property Partner</span>
+      </div>
+      <h1 class="hero-h1">
+        Own Premium<br>
+        Property in<br>
+        <em>Warri's Fastest</em><br>
+        Growing Locations
+      </h1>
+      <p class="hero-sub">
+        High-yield land investments, luxury estates, and furnished apartments in Delta State's most sought-after corridors. Trusted by diaspora investors, oil & gas executives, and high-net-worth Nigerians.
+      </p>
+      <div class="hero-btns">
+        <a href="https://wa.me/2348160044629?text=I%20want%20to%20book%20a%20property%20inspection%20with%20Warri%20Realtor." class="btn-primary" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Book Inspection
+        </a>
+        <a href="#properties" class="btn-outline">Explore Properties</a>
+      </div>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-card">
+        <div class="trust-icon">⭐</div>
+        <div>
+          <div class="trust-label">Google Rating</div>
+          <div class="trust-value">4.9 / 5.0 — Verified Reviews</div>
+        </div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">🏡</div>
+        <div>
+          <div class="trust-label">Properties Listed</div>
+          <div class="trust-value">Nigeria Property Centre ✓</div>
+        </div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">🔐</div>
+        <div>
+          <div class="trust-label">Documentation</div>
+          <div class="trust-value">Verified & Legally Backed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num" data-count="500" data-suffix="+">0+</div>
+      <div class="hero-stat-label">Properties Sold</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num" data-count="350" data-suffix="+">0+</div>
+      <div class="hero-stat-label">Happy Investors</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num" data-count="12" data-suffix="">0</div>
+      <div class="hero-stat-label">Years in Delta State</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num" data-count="95" data-suffix="%">0%</div>
+      <div class="hero-stat-label">Client Satisfaction</div>
+    </div>
+  </div>
+
+  <a href="#about-intro" class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </a>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track" id="ticker">
+    <div class="ticker-item">Farm Lands Available <div class="ticker-dot"></div></div>
+    <div class="ticker-item">Luxury Homes in Warri <div class="ticker-dot"></div></div>
+    <div class="ticker-item">Furnished Apartments <div class="ticker-dot"></div></div>
+    <div class="ticker-item">Estate Land Allocations <div class="ticker-dot"></div></div>
+    <div class="ticker-item">Investment Plots — High ROI <div class="ticker-dot"></div></div>
+    <div class="ticker-item">Property Management Services <div class="ticker-dot"></div></div>
+    <div class="ticker-item">New Construction Consulting <div class="ticker-dot"></div></div>
+    <div class="ticker-item">Diaspora Investment Advisory <div class="ticker-dot"></div></div>
+    <!-- duplicate for seamless loop -->
+    <div class="ticker-item">Farm Lands Available <div class="ticker-dot"></div></div>
+    <div class="ticker-item">Luxury Homes in Warri <div class="ticker-dot"></div></div>
+    <div class="ticker-item">Furnished Apartments <div class="ticker-dot"></div></div>
+    <div class="ticker-item">Estate Land Allocations <div class="ticker-dot"></div></div>
+    <div class="ticker-item">Investment Plots — High ROI <div class="ticker-dot"></div></div>
+    <div class="ticker-item">Property Management Services <div class="ticker-dot"></div></div>
+    <div class="ticker-item">New Construction Consulting <div class="ticker-dot"></div></div>
+    <div class="ticker-item">Diaspora Investment Advisory <div class="ticker-dot"></div></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ ABOUT INTRO ═══════════════════════ -->
+<section id="about-intro">
+  <div class="reveal-l">
+    <div class="about-visual">
+      <div class="about-img-main">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=80" alt="Luxury Property Warri" loading="lazy">
+      </div>
+      <div class="about-img-accent">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80" alt="Premium Estate" loading="lazy">
+      </div>
+      <div class="about-exp-badge">
+        <div class="about-exp-num">12+</div>
+        <div class="about-exp-label">Years of<br>Excellence</div>
+      </div>
+    </div>
+  </div>
+  <div class="reveal-r">
+    <div class="section-tag"><span>About Warri Realtor</span></div>
+    <h2 class="section-h2">
+      Delta State's Most<br>
+      <em>Trusted Property</em><br>
+      Investment Partner
+    </h2>
+    <div class="gold-line"></div>
+    <p class="section-p">
+      Warri Realtor is a premium real estate brand built for investors who demand excellence. We specialize in sourcing, verifying, and securing high-value properties across Warri and Delta State — from luxury gated estates to income-generating land banks.
+    </p>
+    <br>
+    <p class="section-p">
+      Our clients are oil & gas executives, diaspora investors, and visionary Nigerians who understand that real estate in Warri is one of the most strategic wealth-building decisions available today. We deliver verified documentation, expert guidance, and concierge-level service at every step.
+    </p>
+    <div class="luxury-divider">
+      <span class="luxury-divider-icon">◆</span>
+    </div>
+    <div class="verified-strip">
+      <div class="verified-item">
+        <div class="verified-icon">✓</div>
+        <div>
+          <div class="verified-label">Verified Properties</div>
+          <div class="verified-value">100% Documented</div>
+        </div>
+      </div>
+      <div class="verified-item">
+        <div class="verified-icon">🏛️</div>
+        <div>
+          <div class="verified-label">Legal Support</div>
+          <div class="verified-value">Full Assistance</div>
+        </div>
+      </div>
+      <div class="verified-item">
+        <div class="verified-icon">🌍</div>
+        <div>
+          <div class="verified-label">Diaspora Ready</div>
+          <div class="verified-value">Remote Purchase</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ PROPERTIES ═══════════════════════ -->
+<section id="properties">
+  <div class="properties-header">
+    <div class="reveal">
+      <div class="section-tag"><span>Featured Listings</span></div>
+      <h2 class="section-h2">Premium Properties<br>in <em>Delta State</em></h2>
+    </div>
+    <div class="reveal">
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="land">Land</button>
+        <button class="filter-tab" data-filter="luxury">Luxury Homes</button>
+        <button class="filter-tab" data-filter="estate">Estates</button>
+        <button class="filter-tab" data-filter="furnished">Furnished</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="properties-grid reveal">
+    <!-- Featured -->
+    <div class="prop-card featured" data-cat="luxury">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80" alt="Luxury Mansion Warri" loading="lazy">
+      <div class="prop-overlay"></div>
+      <div class="prop-info">
+        <div class="prop-tag">⭐ Featured · Luxury</div>
+        <div class="prop-name">The Presidential Villa,<br>GRA Phase 3</div>
+        <div class="prop-loc">📍 Government Reserved Area, Warri</div>
+        <div class="prop-price">₦180,000,000</div>
+        <a href="https://wa.me/2348160044629?text=I%27m%20interested%20in%20The%20Presidential%20Villa%20GRA%20Phase%203." class="prop-cta" target="_blank">
+          Enquire Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="prop-card" data-cat="land">
+      <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=80" alt="Farm Land Delta State" loading="lazy">
+      <div class="prop-overlay"></div>
+      <div class="prop-info">
+        <div class="prop-tag">Farm Land</div>
+        <div class="prop-name">Premium Farm Estate,<br>Ughelli Axis</div>
+        <div class="prop-loc">📍 Ughelli, Delta State</div>
+        <div class="prop-price">₦8,500,000 / plot</div>
+        <a href="https://wa.me/2348160044629?text=I%27m%20interested%20in%20the%20Farm%20Estate%20at%20Ughelli." class="prop-cta" target="_blank">
+          Enquire Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="prop-card" data-cat="furnished">
+      <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700&q=80" alt="Furnished Apartment Warri" loading="lazy">
+      <div class="prop-overlay"></div>
+      <div class="prop-info">
+        <div class="prop-tag">Furnished · For Rent</div>
+        <div class="prop-name">Executive 4-Bed Apartment,<br>Effurun</div>
+        <div class="prop-loc">📍 Effurun, Warri</div>
+        <div class="prop-price">₦3,500,000 / yr</div>
+        <a href="https://wa.me/2348160044629?text=I%27m%20interested%20in%20the%20furnished%20apartment%20in%20Effurun." class="prop-cta" target="_blank">
+          Enquire Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="prop-card" data-cat="estate">
+      <img src="https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?w=700&q=80" alt="Gated Estate Warri" loading="lazy">
+      <div class="prop-overlay"></div>
+      <div class="prop-info">
+        <div class="prop-tag">Estate · Land</div>
+        <div class="prop-name">Royale Gardens Estate,<br>Agbarho</div>
+        <div class="prop-loc">📍 Agbarho, Delta State</div>
+        <div class="prop-price">₦6,200,000 / plot</div>
+        <a href="https://wa.me/2348160044629?text=I%27m%20interested%20in%20Royale%20Gardens%20Estate%20Agbarho." class="prop-cta" target="_blank">
+          Enquire Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="prop-card" data-cat="luxury">
+      <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=700&q=80" alt="Luxury Home Delta" loading="lazy">
+      <div class="prop-overlay"></div>
+      <div class="prop-info">
+        <div class="prop-tag">Luxury · For Sale</div>
+        <div class="prop-name">5-Bed Smart Villa,<br>GRA Warri</div>
+        <div class="prop-loc">📍 GRA, Warri South</div>
+        <div class="prop-price">₦95,000,000</div>
+        <a href="https://wa.me/2348160044629?text=I%27m%20interested%20in%20the%205-bed%20villa%20in%20GRA%20Warri." class="prop-cta" target="_blank">
+          Enquire Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:48px;" class="reveal">
+    <a href="https://wa.me/2348160044629?text=Please%20share%20your%20full%20property%20listings%20with%20me." class="btn-outline" target="_blank">View All Listings →</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════ WHY INVEST ═══════════════════════ -->
+<section id="why-invest">
+  <div class="why-bg-text">WARRI</div>
+  <div class="why-grid">
+    <div class="reveal-l">
+      <div class="section-tag"><span>Investment Case</span></div>
+      <h2 class="section-h2">
+        Why Smart Money<br>is Moving to<br>
+        <em>Warri & Delta State</em>
+      </h2>
+      <div class="gold-line"></div>
+      <p class="section-p">
+        Warri is Nigeria's oil capital and Delta State's commercial powerhouse. With rising infrastructure investment, an expanding middle class, and a rapidly appreciating land market, strategic property acquisition here delivers some of Nigeria's strongest real estate ROI.
+      </p>
+
+      <div class="why-stats">
+        <div class="why-stat-card reveal">
+          <div class="why-stat-num" data-count="280" data-suffix="%">0%</div>
+          <div class="why-stat-desc">Average land value appreciation in prime Warri corridors over 10 years</div>
+        </div>
+        <div class="why-stat-card reveal">
+          <div class="why-stat-num" data-count="18" data-suffix="%">0%</div>
+          <div class="why-stat-desc">Annual rental yield for furnished properties near oil & gas hubs</div>
+        </div>
+        <div class="why-stat-card reveal">
+          <div class="why-stat-num" data-count="4.2" data-suffix="M">0</div>
+          <div class="why-stat-desc">Population — Delta State's growing consumer base driving demand</div>
+        </div>
+        <div class="why-stat-card reveal">
+          <div class="why-stat-num" data-count="₦" data-isText="true">₦</div>
+          <div class="why-stat-desc">Billions in federal infrastructure allocated to Delta State roads, ports & power</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal-r">
+      <div class="invest-points">
+        <div class="invest-point">
+          <div class="invest-point-icon">⚡</div>
+          <div>
+            <div class="invest-point-title">Oil & Gas Economy</div>
+            <div class="invest-point-desc">Warri hosts major energy sector operations, generating constant demand for executive housing and investment-grade properties from oil multinationals and their staff.</div>
+          </div>
+        </div>
+        <div class="invest-point">
+          <div class="invest-point-icon">🏗️</div>
+          <div>
+            <div class="invest-point-title">Infrastructure Boom</div>
+            <div class="invest-point-desc">Federal and state investment in expressways, the Warri port, industrial parks, and power projects is rapidly increasing the value of surrounding land corridors.</div>
+          </div>
+        </div>
+        <div class="invest-point">
+          <div class="invest-point-icon">📈</div>
+          <div>
+            <div class="invest-point-title">Rising Land Values</div>
+            <div class="invest-point-desc">Prime locations in GRA, Effurun, Agbarho, and Ughelli have consistently outperformed inflation, making them ideal for long-term wealth preservation.</div>
+          </div>
+        </div>
+        <div class="invest-point">
+          <div class="invest-point-icon">✈️</div>
+          <div>
+            <div class="invest-point-title">Diaspora Gateway</div>
+            <div class="invest-point-desc">Thousands of Delta State indigenes in the UK, USA, and Canada are repatriating capital into real estate. We make remote purchasing seamless and secure.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ SERVICES ═══════════════════════ -->
+<section id="services">
+  <div style="text-align:center;max-width:600px;margin:0 auto 0;" class="reveal">
+    <div class="section-tag" style="justify-content:center;"><span>What We Offer</span></div>
+    <h2 class="section-h2">Premium Services<br>Tailored for <em>Serious Investors</em></h2>
+    <div class="gold-line" style="margin:24px auto;"></div>
+    <p class="section-p" style="margin:0 auto;text-align:center;">
+      From first-time buyers to experienced portfolio investors — our suite of services covers every phase of your real estate journey.
+    </p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-num">01</div>
+      <div class="service-icon">🏡</div>
+      <div class="service-title">Luxury Property Buying & Sales</div>
+      <div class="service-desc">We connect discerning buyers with Warri's finest residential properties — villas, detached duplexes, and executive bungalows with verified C-of-O documentation.</div>
+      <div class="service-arrow">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">02</div>
+      <div class="service-icon">🌿</div>
+      <div class="service-title">Farm & Estate Land Sales</div>
+      <div class="service-desc">Premium agricultural land and estate plots across Delta State. Ideal for investors seeking land banking, agribusiness, or mixed-use development opportunities.</div>
+      <div class="service-arrow">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">03</div>
+      <div class="service-icon">🛋️</div>
+      <div class="service-title">Furnished Property Rentals</div>
+      <div class="service-desc">Turnkey furnished apartments and homes for short-let, corporate, and long-term tenancy. Perfect for oil & gas professionals and corporate relocations to Warri.</div>
+      <div class="service-arrow">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">04</div>
+      <div class="service-icon">🔑</div>
+      <div class="service-title">Property Management</div>
+      <div class="service-desc">We manage your investment portfolio on your behalf — tenant sourcing, rent collection, maintenance oversight, and detailed monthly reporting for diaspora owners.</div>
+      <div class="service-arrow">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">05</div>
+      <div class="service-icon">📊</div>
+      <div class="service-title">Real Estate Investment Advisory</div>
+      <div class="service-desc">Data-driven investment analysis, ROI projections, and portfolio strategy for investors looking to maximise returns from Delta State's rapidly growing property market.</div>
+      <div class="service-arrow">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">06</div>
+      <div class="service-icon">🏗️</div>
+      <div class="service-title">New Construction Consulting</div>
+      <div class="service-desc">From architectural planning to project supervision, we guide new-build projects from foundation to finishing — ensuring quality, compliance, and on-budget delivery.</div>
+      <div class="service-arrow">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">07</div>
+      <div class="service-icon">🏠</div>
+      <div class="service-title">First-Time Home Buyer Services</div>
+      <div class="service-desc">We make homeownership accessible. From mortgage guidance and site visits to documentation support — we walk first-time buyers through every step with patience and clarity.</div>
+      <div class="service-arrow">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-num">08</div>
+      <div class="service-icon">📋</div>
+      <div class="service-title">Property Sales Management</div>
+      <div class="service-desc">Selling your property? We handle valuation, marketing, buyer vetting, negotiation, and documentation — maximizing your sale price while minimizing your stress.</div>
+      <div class="service-arrow">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CALCULATOR ═══════════════════════ -->
+<section id="calculator">
+  <div class="reveal">
+    <div class="section-tag"><span>Investment Tool</span></div>
+    <h2 class="section-h2">Calculate Your<br><em>Property ROI</em></h2>
+    <div class="gold-line"></div>
+    <p class="section-p">Estimate your returns from Warri real estate investment. Adjust variables to model your ideal scenario.</p>
+  </div>
+
+  <div class="calc-wrap">
+    <div class="calc-box reveal-l">
+      <h3>Investment Parameters</h3>
+
+      <div class="calc-field">
+        <label>Property Type</label>
+        <select id="propType" onchange="calcROI()">
+          <option value="land">Land / Plot</option>
+          <option value="rental">Furnished Rental</option>
+          <option value="luxury">Luxury Residential</option>
+          <option value="farm">Farm Land</option>
+        </select>
+      </div>
+
+      <div class="calc-field">
+        <label>Investment Amount (₦)</label>
+        <input type="number" id="investAmt" value="10000000" min="500000" step="500000" oninput="calcROI()">
+      </div>
+
+      <div class="calc-field">
+        <label>Investment Duration: <span id="durLabel">5 years</span></label>
+        <input type="range" class="calc-slider" id="durSlider" min="1" max="20" value="5" oninput="calcROI()">
+      </div>
+
+      <div class="calc-field">
+        <label>Expected Annual Appreciation (%)</label>
+        <input type="number" id="apprRate" value="22" min="1" max="100" step="1" oninput="calcROI()">
+      </div>
+
+      <div class="calc-field">
+        <label>Annual Rental Yield (% — for rental properties)</label>
+        <input type="number" id="rentalYield" value="15" min="0" max="50" step="1" oninput="calcROI()">
+      </div>
+
+      <button class="btn-primary" onclick="calcROI()" style="width:100%;justify-content:center;">
+        Calculate Returns
+      </button>
+    </div>
+
+    <div class="calc-result reveal-r">
+      <div class="calc-result-title">📊 Projected Investment Outcome</div>
+
+      <div class="calc-result-row">
+        <div class="calc-result-label">Initial Investment</div>
+        <div class="calc-result-val" id="r-initial">₦10,000,000</div>
+      </div>
+      <div class="calc-result-row">
+        <div class="calc-result-label">Capital Appreciation</div>
+        <div class="calc-result-val" id="r-appreciation">—</div>
+      </div>
+      <div class="calc-result-row">
+        <div class="calc-result-label">Total Rental Income</div>
+        <div class="calc-result-val" id="r-rental">—</div>
+      </div>
+      <div class="calc-result-row">
+        <div class="calc-result-label">Combined ROI</div>
+        <div class="calc-result-val" id="r-roi">—</div>
+      </div>
+
+      <div class="calc-result-total">
+        <div class="calc-total-label">Projected Portfolio Value</div>
+        <div class="calc-total-val" id="r-total">₦—</div>
+      </div>
+
+      <div style="margin-top:32px;padding-top:24px;border-top:1px solid var(--border-subtle);">
+        <p style="font-size:0.72rem;color:var(--muted);line-height:1.8;margin-bottom:20px;">
+          * Projections are illustrative, based on historical Delta State market performance. Actual returns vary. Speak with our investment advisors for a personalised analysis.
+        </p>
+        <a href="https://wa.me/2348160044629?text=I%20want%20a%20personalised%20investment%20analysis%20from%20Warri%20Realtor." class="btn-primary" target="_blank" style="width:100%;justify-content:center;">
+          📲 Get Personalised Analysis
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ TESTIMONIALS ═══════════════════════ -->
+<section id="testimonials">
+  <div class="testi-header reveal">
+    <div>
+      <div class="section-tag"><span>Client Stories</span></div>
+      <h2 class="section-h2">What Our<br><em>Investors Say</em></h2>
+    </div>
+    <div class="rating-badge">
+      <div class="rating-num">4.9</div>
+      <div>
+        <div class="rating-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <div class="rating-count">Based on 120+ verified reviews</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="overflow:hidden;" class="reveal">
+    <div class="testi-track" id="testiTrack">
+
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">I bought two plots through Warri Realtor from London and the entire process was seamless. They handled documentation, kept me updated daily, and my land title was ready in weeks. This is world-class service by any standard.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AO</div>
+          <div>
+            <div class="testi-name">Adaeze Okonkwo</div>
+            <div class="testi-role">Nurse · London, UK · Diaspora Investor</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">As an oil & gas professional based in Port Harcourt, I was sceptical about investing in Warri. Warri Realtor walked me through everything — market analysis, site visits, documentation. My property has already appreciated 40% in 2 years.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">CE</div>
+          <div>
+            <div class="testi-name">Chukwuemeka Eze</div>
+            <div class="testi-role">Petroleum Engineer · Port Harcourt</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">I needed a furnished apartment for my company's executives visiting our Warri operations. Warri Realtor delivered a stunning 4-bedroom unit within days. The quality rivaled top Lagos serviced apartments. Exceptional.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">FK</div>
+          <div>
+            <div class="testi-name">Fatimah Kabir</div>
+            <div class="testi-role">Corporate Director · Abuja</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">My family is from Warri but I grew up in Houston. I always wanted to invest back home but was afraid of fraud. Warri Realtor gave me genuine C-of-O documents, clear receipts, and a lawyer. I now own 5 plots. God bless them.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">BI</div>
+          <div>
+            <div class="testi-name">Blessing Itsekiri</div>
+            <div class="testi-role">Healthcare Professional · Houston, TX</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Their property management service is phenomenal. I own three units in Warri but live in Lagos. They handle everything — tenants, repairs, rent collection — and send me clean reports monthly. True passive income made possible.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">TO</div>
+          <div>
+            <div class="testi-name">Tunde Olatunde</div>
+            <div class="testi-role">Entrepreneur · Lagos Island</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="testi-controls">
+    <button class="testi-btn" id="testiPrev" aria-label="Previous">←</button>
+    <button class="testi-btn" id="testiNext" aria-label="Next">→</button>
+  </div>
+</section>
+
+<!-- ═══════════════════════ SOCIAL PROOF ═══════════════════════ -->
+<section id="social">
+  <div class="social-header reveal">
+    <div class="insta-handle">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      @landsandmore.ng
+    </div>
+    <h2 class="section-h2" style="margin-bottom:8px;">Follow Our <em>Property Feed</em></h2>
+    <p style="font-size:0.8rem;color:var(--muted);">Real properties. Real clients. Real results.</p>
+  </div>
+
+  <div class="insta-grid reveal">
+    <div class="insta-card">
+      <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=400&q=75" alt="" loading="lazy">
+      <div class="insta-overlay"><div class="insta-likes">❤️ 412</div><div style="font-size:0.7rem;color:var(--white);">GRA Luxury Villa</div></div>
+    </div>
+    <div class="insta-card">
+      <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&q=75" alt="" loading="lazy">
+      <div class="insta-overlay"><div class="insta-likes">❤️ 287</div><div style="font-size:0.7rem;color:var(--white);">Estate Land — Agbarho</div></div>
+    </div>
+    <div class="insta-card">
+      <img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=400&q=75" alt="" loading="lazy">
+      <div class="insta-overlay"><div class="insta-likes">❤️ 534</div><div style="font-size:0.7rem;color:var(--white);">Furnished Apartment Tour</div></div>
+    </div>
+    <div class="insta-card">
+      <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=400&q=75" alt="" loading="lazy">
+      <div class="insta-overlay"><div class="insta-likes">❤️ 198</div><div style="font-size:0.7rem;color:var(--white);">Keys Handover 🔑</div></div>
+    </div>
+    <div class="insta-card">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6d4c0dfe?w=400&q=75" alt="" loading="lazy">
+      <div class="insta-overlay"><div class="insta-likes">❤️ 621</div><div style="font-size:0.7rem;color:var(--white);">New Listing — 5-Bed Villa</div></div>
+    </div>
+  </div>
+
+  <div class="social-metrics reveal">
+    <div class="metric-box">
+      <div class="metric-val" data-count="8400" data-suffix="+">0+</div>
+      <div class="metric-label">Instagram Followers</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-val" data-count="120" data-suffix="+">0+</div>
+      <div class="metric-label">5-Star Reviews</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-val" data-count="500" data-suffix="+">0+</div>
+      <div class="metric-label">Properties Transacted</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-val" data-count="12" data-suffix=" yrs">0 yrs</div>
+      <div class="metric-label">Market Experience</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CTA BANNER ═══════════════════════ -->
+<section id="cta-banner">
+  <div class="cta-bg"></div>
+  <div class="cta-grid-lines"></div>
+  <div style="position:relative;z-index:2;" class="reveal">
+    <div class="section-tag" style="justify-content:center;"><span>Ready to Invest?</span></div>
+    <h2 class="cta-h2">
+      Secure Your Next<br>
+      <em style="color:var(--gold)">Property Investment</em><br>
+      in Warri Today
+    </h2>
+    <p class="cta-sub">Join 350+ satisfied investors. Book a free consultation or inspection and let us show you why Warri Realtor is Delta State's most trusted property partner.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/2348160044629?text=Hello%20Warri%20Realtor%2C%20I%27d%20like%20to%20book%20a%20free%20property%20inspection." class="cta-wa-btn" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.555 4.125 1.525 5.863L0 24l6.337-1.501C8.012 23.471 9.967 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.95 0-3.764-.57-5.285-1.554l-.378-.225-3.767.892.938-3.653-.248-.388C2.24 15.271 1.818 13.68 1.818 12 1.818 6.51 6.51 1.818 12 1.818S22.182 6.51 22.182 12 17.49 21.818 12 21.818z"/></svg>
+        Book Free Inspection via WhatsApp
+      </a>
+      <a href="tel:+2348160044629" class="btn-outline">📞 Call: 0816 004 4629</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">WARRI REALTOR</div>
+      <div class="footer-brand-tagline">Premium Property Investment · Delta State</div>
+      <p class="footer-desc">Delta State's most trusted luxury real estate brand. We connect visionary investors with premium properties in Warri and beyond — with verified documentation, transparent deals, and concierge-level service.</p>
+      <div class="footer-contact-item"><span class="footer-contact-icon">📞</span> 0816 004 4629</div>
+      <div class="footer-contact-item"><span class="footer-contact-icon">📸</span> @landsandmore.ng</div>
+      <div class="footer-contact-item"><span class="footer-contact-icon">📍</span> Warri, Delta State, Nigeria</div>
+      <div class="footer-contact-item"><span class="footer-contact-icon">🌐</span> Nigeria Property Centre</div>
+    </div>
+
+    <div>
+      <div class="footer-col-title">Our Services</div>
+      <ul class="footer-links">
+        <li><a href="#services">Luxury Property Sales</a></li>
+        <li><a href="#services">Farm & Estate Land</a></li>
+        <li><a href="#services">Furnished Rentals</a></li>
+        <li><a href="#services">Property Management</a></li>
+        <li><a href="#services">Investment Advisory</a></li>
+        <li><a href="#services">New Construction</a></li>
+        <li><a href="#services">First-Time Buyers</a></li>
+        <li><a href="#services">Sales Management</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-col-title">Property Areas</div>
+      <ul class="footer-links">
+        <li><a href="#properties">GRA Warri</a></li>
+        <li><a href="#properties">Effurun</a></li>
+        <li><a href="#properties">Agbarho</a></li>
+        <li><a href="#properties">Ughelli</a></li>
+        <li><a href="#properties">Sapele Road Axis</a></li>
+        <li><a href="#properties">Asaba</a></li>
+        <li><a href="#properties">Ovwian-Aladja</a></li>
+        <li><a href="#properties">Ekpan</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-col-title">Stay Updated</div>
+      <p style="font-size:0.78rem;color:var(--text-dim);line-height:1.8;margin-bottom:20px;">Get exclusive listings, investment insights, and market updates delivered to your inbox.</p>
+      <div class="newsletter-form">
+        <input class="newsletter-input" type="email" placeholder="Your email address">
+        <button class="newsletter-btn">→</button>
+      </div>
+      <div style="margin-top:24px;">
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about-intro">About Us</a></li>
+          <li><a href="#calculator">ROI Calculator</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="https://wa.me/2348160044629" target="_blank">WhatsApp Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Warri Realtor. All rights reserved. | Premium Properties · Warri, Delta State, Nigeria</div>
+    <div class="footer-socials">
+      <a href="https://instagram.com/landsandmore.ng" class="footer-social" target="_blank" aria-label="Instagram">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://wa.me/2348160044629" class="footer-social" target="_blank" aria-label="WhatsApp">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.555 4.125 1.525 5.863L0 24l6.337-1.501C8.012 23.471 9.967 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.95 0-3.764-.57-5.285-1.554l-.378-.225-3.767.892.938-3.653-.248-.388C2.24 15.271 1.818 13.68 1.818 12 1.818 6.51 6.51 1.818 12 1.818S22.182 6.51 22.182 12 17.49 21.818 12 21.818z"/></svg>
+      </a>
+      <a href="tel:+2348160044629" class="footer-social" aria-label="Phone">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 01.07 2 2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════ SCRIPTS ═══════════════════════ -->
+<script>
+// ─── LOADER ───
+window.addEventListener('load', () => {
+  const bar = document.getElementById('loaderBar');
+  bar.style.width = '100%';
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+    // start hero counters
+    animateCounters(document.querySelectorAll('.hero-stat-num'));
+  }, 2200);
+});
+
+// ─── CURSOR ───
+const dot = document.getElementById('cursor-dot');
+const ring = document.getElementById('cursor-ring');
+document.addEventListener('mousemove', e => {
+  dot.style.left = e.clientX + 'px';
+  dot.style.top = e.clientY + 'px';
+  ring.style.left = e.clientX + 'px';
+  ring.style.top = e.clientY + 'px';
+});
+document.querySelectorAll('a, button, .prop-card, .service-card').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    ring.style.width = '60px'; ring.style.height = '60px';
+    ring.style.borderColor = 'rgba(201,168,76,0.8)';
+  });
+  el.addEventListener('mouseleave', () => {
+    ring.style.width = '36px'; ring.style.height = '36px';
+    ring.style.borderColor = 'rgba(201,168,76,0.5)';
+  });
+});
+
+// ─── NAV SCROLL ───
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ─── MOBILE MENU ───
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.add('open');
+});
+document.getElementById('closeMenu').addEventListener('click', closeMob);
+function closeMob() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+// ─── SCROLL REVEAL ───
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      // animate counters inside this element
+      const counters = e.target.querySelectorAll('[data-count]');
+      if (counters.length) animateCounters(counters);
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach(el => revealObserver.observe(el));
+
+// ─── COUNTER ANIMATION ───
+function animateCounters(els) {
+  els.forEach(el => {
+    if (el.dataset.isText) return; // skip text-only
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const isFloat = el.dataset.count.includes('.');
+    let current = 0;
+    const duration = 2000;
+    const start = performance.now();
+    function step(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      current = ease * target;
+      el.textContent = (isFloat ? current.toFixed(1) : Math.floor(current).toLocaleString()) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
+}
+
+// ─── PROPERTY FILTER ───
+document.querySelectorAll('.filter-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const filter = tab.dataset.filter;
+    document.querySelectorAll('.prop-card').forEach(card => {
+      if (filter === 'all' || card.dataset.cat === filter) {
+        card.style.display = 'block';
+        card.style.opacity = '0';
+        card.style.transform = 'scale(0.96)';
+        setTimeout(() => {
+          card.style.transition = 'all 0.4s';
+          card.style.opacity = '1';
+          card.style.transform = 'scale(1)';
+        }, 50);
+      } else {
+        card.style.opacity = '0';
+        card.style.transform = 'scale(0.96)';
+        setTimeout(() => card.style.display = 'none', 400);
+      }
+    });
+  });
+});
+
+// ─── TESTIMONIAL CAROUSEL ───
+const track = document.getElementById('testiTrack');
+let testiIdx = 0;
+const cards = document.querySelectorAll('.testi-card');
+const cardW = 424; // card width + gap
+
+function scrollTesti(dir) {
+  const max = cards.length - 1;
+  testiIdx = Math.max(0, Math.min(testiIdx + dir, max - 1));
+  track.style.transform = `translateX(-${testiIdx * cardW}px)`;
+}
+document.getElementById('testiPrev').addEventListener('click', () => scrollTesti(-1));
+document.getElementById('testiNext').addEventListener('click', () => scrollTesti(1));
+
+// auto-advance testimonials
+setInterval(() => {
+  testiIdx = (testiIdx + 1) % (cards.length - 1);
+  track.style.transform = `translateX(-${testiIdx * cardW}px)`;
+}, 5000);
+
+// ─── ROI CALCULATOR ───
+function fmtNGN(val) {
+  return '₦' + Math.round(val).toLocaleString('en-NG');
+}
+function calcROI() {
+  const type = document.getElementById('propType').value;
+  const invest = parseFloat(document.getElementById('investAmt').value) || 10000000;
+  const years = parseInt(document.getElementById('durSlider').value) || 5;
+  const appr = parseFloat(document.getElementById('apprRate').value) / 100 || 0.22;
+  const rentalPct = parseFloat(document.getElementById('rentalYield').value) / 100 || 0.15;
+
+  document.getElementById('durLabel').textContent = years + ' year' + (years > 1 ? 's' : '');
+
+  // Compound appreciation
+  const appreciated = invest * Math.pow(1 + appr, years);
+  const capitalGain = appreciated - invest;
+
+  // Rental income (only for rental/luxury/furnished types)
+  let totalRental = 0;
+  if (type === 'rental' || type === 'luxury') {
+    totalRental = invest * rentalPct * years;
+  }
+
+  const totalReturn = capitalGain + totalRental;
+  const roi = ((totalReturn / invest) * 100).toFixed(1);
+  const portfolio = invest + totalReturn;
+
+  document.getElementById('r-initial').textContent = fmtNGN(invest);
+  document.getElementById('r-appreciation').textContent = fmtNGN(capitalGain);
+  document.getElementById('r-rental').textContent = totalRental > 0 ? fmtNGN(totalRental) : 'N/A (Land)';
+  document.getElementById('r-roi').textContent = roi + '%';
+  document.getElementById('r-total').textContent = fmtNGN(portfolio);
+}
+calcROI(); // initialize on load
+
+// ─── TICKER duplicate for seamless loop ───
+// (Already duplicated in HTML)
+</script>
+</body>
+</html>
